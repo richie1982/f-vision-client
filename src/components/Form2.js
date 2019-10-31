@@ -18,7 +18,6 @@ const Form2 = (props) => {
 
     const buttonPostion = {
         alignSelf: 'flex-end', 
-        marginTop: '50px',
     }
 
     const [ telephone, setTelephone ] = useState("")
@@ -76,7 +75,8 @@ const Form2 = (props) => {
                         <option value="female">Female</option>
                     </select>
                 </div>
-                <div>
+                </form>
+                <div style={props.step === 2 ? {display: "block"} : {display: "none"}}>
                     <h5>Date of Birth</h5>
                     <input className="input-box"
                         onChange={(e) => {setDateOfBirth(e.target.value)}}
@@ -84,7 +84,6 @@ const Form2 = (props) => {
                         type="date"
                     />
                 </div>
-            </form>
             <div style={props.step === 2 ? buttonPostion : offMode}>
                 <button className="button"
                 onClick={() => handleSubmit()}

@@ -18,7 +18,6 @@ const Form1 = (props) => {
 
     const buttonPostion = {
         alignSelf: 'flex-end', 
-        marginTop: '50px',
     }
 
     const [ firstName, setFirstName ] = useState("")
@@ -74,7 +73,8 @@ const Form1 = (props) => {
                         value={surName}
                     />
                 </div>
-                <div>
+                </div>
+                <div style={props.step === 1 ? {display: "block"} : {display: "none"}}>
                     <h5>Email Address</h5>
                     <input className="input-box"
                         onChange={(e) => {setEmail(e.target.value)}}
@@ -82,7 +82,6 @@ const Form1 = (props) => {
                         type="email"
                     />
                 </div>
-            </div>
             <div style={props.step === 1 ? buttonPostion : offMode}>
                 <button className="button"
                 onClick={() => handleSubmit()}
